@@ -1,0 +1,17 @@
+.container {
+  padding: 100px 0;
+}
+
+.center {
+  margin: 0 auto 0;
+}
+
+.board {
+  background-color: red;
+}
+
+.card {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+}
