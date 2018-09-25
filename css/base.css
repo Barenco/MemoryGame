@@ -1,17 +1,12 @@
-.container {
-  padding: 100px 0;
-}
-
 .center {
   margin: 0 auto 0;
-}
-
-.board {
-  background-color: red;
 }
 
 .card {
   margin: 20px;
   width: 100px;
   height: 100px;
+  -webkit-box-shadow: 0px 0px 45px 15px rgba(168,140,54,0.47);
+  -moz-box-shadow: 0px 0px 45px 15px rgba(168,140,54,0.47);
+  box-shadow: 0px 0px 45px 15px rgba(168,140,54,0.47);
 }
