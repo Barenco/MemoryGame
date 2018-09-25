@@ -6,6 +6,10 @@
   margin: 0 auto 0;
 }
 
+.score-bar {
+  font-size: 0.87em;
+}
+
 .card {
   margin: 20px;
   width: 100px;
