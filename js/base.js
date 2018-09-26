@@ -1,3 +1,3 @@
-$('.card').on('click', function (){
-  $('.color-image').css('display', 'block')
+$('.card').on('click', function (evt){
+  $(this).find('.color-image').css('display', 'block')
 })
