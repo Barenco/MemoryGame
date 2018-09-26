@@ -24,19 +24,26 @@ function shuffleArray(array) {
 }
 shuffleArray(finalList)
 
-// CREATING A CARD ELEMENT IN THE DOM
-const board = document.querySelector('.board');
-const row1 = document.createElement('tbody');
-const card = document.createElement('div');
-const image = document.createElement('img');
-card.setAttribute('class', 'card')
-image.setAttribute('class', 'color-image')
-image.setAttribute('src', 'images\\amarelo.png')
-card.setAttribute('id', 'card'+finalList[0])
+// CREATING A CARD ELEMENT IN THE
+function createNewGame() {
+  let indexCount = 0
+  const board = document.querySelector('.board');
+  for (i = 0; i < 4; i++) {
+    const row1 = document.createElement('tbody');
+    for (j = 0; j < 4; j++) {
+      const col = document.createElement('td');
+      const card = document.createElement('div');
+      card.setAttribute('class', 'card')
+      card.setAttribute('id', 'card'+finalList[indexCount])
+      col.appendChild(card)
+      row1.appendChild(col)
+      board.appendChild(row1)
+      indexCount += 1
+    }
+  }
+}
 
-card.appendChild(image)
-row1.appendChild(card)
-board.appendChild(row1)
+createNewGame()
 
 // CHANGING DISPLAY OF THE CLICKED CARD
 $('.card').on('click', function (){
