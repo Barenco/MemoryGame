@@ -24,3 +24,35 @@
   height: 100%;
   display:none;
 }
+
+#card0 {
+  background-color: red;
+}
+
+#card1 {
+  background-color: blue;
+}
+
+#card2 {
+  background-color: yellow;
+}
+
+#card3 {
+  background-color: green;
+}
+
+#card4 {
+  background-color: orange;
+}
+
+#card5 {
+  background-color: grey;
+}
+
+#card6 {
+  background-color: pink;
+}
+
+#card7 {
+  background-color: black;
+}
