@@ -1,3 +1,5 @@
+let count = 0
+
 // CREATING A LIST WITH 8 DIFFERENT NUMBES TWICE
 function makeNewList() {
   // MAKING A RANDOM LIST OF 8 NUMBER
@@ -56,10 +58,15 @@ createNewGame()
 // CHANGING DISPLAY OF THE CLICKED CARD
 $('.card').on('click', function (){
   $(this).find('.hidden').css('display', 'block')
+  count += 1
+  console.log(count)
 })
+
+
 
 // RESETING THE GAME
 $('#replay').on('click', function(){
   $('tbody').remove()
+  count = 0
   createNewGame();
 })
