@@ -10,6 +10,15 @@
   font-size: 0.87em;
 }
 
+.hidden {
+  display: none;
+}
+
+.color-image {
+  width: 100%;
+  height: 100%;
+}
+
 .card {
   margin: 20px;
   width: 100px;
