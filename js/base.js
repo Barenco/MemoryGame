@@ -28,7 +28,7 @@ function makeNewList() {
   return(finalList)
 }
 
-// CREATING A CARD ELEMENT IN THE
+// CREATE A BOARD WITH DIFFERENT SET OF CARDS
 function createNewGame() {
   const list = makeNewList()
   let indexCount = 0
@@ -38,8 +38,11 @@ function createNewGame() {
     for (j = 0; j < 4; j++) {
       const col = document.createElement('td');
       const card = document.createElement('div');
+      const image = document.createElement('img');
+      image.setAttribute('class', 'color-image hidden')
+      image.setAttribute('id', 'card'+list[indexCount])
       card.setAttribute('class', 'card')
-      card.setAttribute('id', 'card'+list[indexCount])
+      card.appendChild(image)
       col.appendChild(card)
       row1.appendChild(col)
       board.appendChild(row1)
@@ -52,7 +55,7 @@ createNewGame()
 
 // CHANGING DISPLAY OF THE CLICKED CARD
 $('.card').on('click', function (){
-  $(this).find('.color-image').css('display', 'block')
+  $(this).find('.hidden').css('display', 'block')
 })
 
 // RESETING THE GAME
