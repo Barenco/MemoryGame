@@ -1,4 +1,5 @@
 let count = 0
+let countText = document.querySelector('#clicks')
 
 // CREATING A LIST WITH 8 DIFFERENT NUMBES TWICE
 function makeNewList() {
@@ -59,7 +60,7 @@ createNewGame()
 $('.card').on('click', function (){
   $(this).find('.hidden').css('display', 'block')
   count += 1
-  console.log(count)
+  countText.textContent = count
 })
 
 
@@ -67,6 +68,6 @@ $('.card').on('click', function (){
 // RESETING THE GAME
 $('#replay').on('click', function(){
   $('tbody').remove()
-  count = 0
+  countText.textContent = "0"
   createNewGame();
 })
