@@ -1,5 +1,8 @@
+// VARIABLES
 let count = 0
 let countText = document.querySelector('#clicks')
+let card1;
+let card2;
 
 // CREATING A LIST WITH 8 DIFFERENT NUMBES TWICE
 function makeNewList() {
@@ -53,8 +56,6 @@ function createNewGame() {
     }
   }
 }
-let card1;
-let card2;
 
 // HIDDING THE TWO CARDS
 function hideCards(card1, card2){
@@ -87,8 +88,12 @@ function clickingCard () {
       card2 = cardImage;
       freezeScreen();
       setTimeout(function() {
+        // SE AS ID FOREM DIFERENTES
         hideCards(card1, card2);
-      }, 1000)
+
+        card1 = undefined;
+        card2 = undefined;
+      }, 1000);
 
     }
 
