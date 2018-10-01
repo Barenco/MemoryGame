@@ -54,20 +54,24 @@ function createNewGame() {
   }
 }
 
+function clickingCard () {
+  $('.card').on('click', function (){
+    $(this).find('.hidden').css('display', 'block')
+    count += 1
+    countText.textContent = count
+  })
+}
+
 createNewGame()
 
-// CHANGING DISPLAY OF THE CLICKED CARD
-$('.card').on('click', function (){
-  $(this).find('.hidden').css('display', 'block')
-  count += 1
-  countText.textContent = count
-})
-
-
+clickingCard()
 
 // RESETING THE GAME
 $('#replay').on('click', function(){
   $('tbody').remove()
   countText.textContent = "0"
   createNewGame();
+  clickingCard()
 })
+
+// CHANGING DISPLAY OF THE CLICKED CARD
