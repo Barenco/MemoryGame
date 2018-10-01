@@ -55,8 +55,9 @@ function createNewGame() {
 }
 
 function clickingCard () {
-  $('.card').on('click', function (){
-    $(this).find('.hidden').css('display', 'block')
+  $('.card').on('click', function (evt){
+    $(this).children().removeClass('hidden')
+    $(this).children().addClass('show')
     count += 1
     countText.textContent = count
   })
