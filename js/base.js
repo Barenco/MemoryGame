@@ -53,11 +53,49 @@ function createNewGame() {
     }
   }
 }
+let card1;
+let card2;
+
+// HIDDING THE TWO CARDS
+function hideCards(card1, card2){
+  card1.removeClass('show');
+  card1.addClass('hidden');
+  card2.removeClass('show');
+  card2.addClass('hidden');
+}
+
+// FREEZING THE SCREEN SO THAT NOTHING IS CLICKABLE
+function freezeScreen() {
+  const blocker = document.createElement('div');
+  const screen = $('main');
+  blocker.setAttribute('class', 'blocker');
+  screen.append(blocker);
+  setTimeout(function(){
+    blocker.remove()
+  }, 1000)
+};
 
 function clickingCard () {
-  $('.card').on('click', function (evt){
-    $(this).children().removeClass('hidden')
-    $(this).children().addClass('show')
+  $('.card').on('click', function (){
+    const cardImage = $(this).children();
+    cardImage.removeClass('hidden');
+    cardImage.addClass('show');
+
+    if (count % 2 === 0) {
+      card1 = cardImage;
+    } else {
+      card2 = cardImage;
+      freezeScreen();
+      setTimeout(function() {
+        hideCards(card1, card2);
+      }, 1000)
+
+    }
+
+
+    // CHECAR SE O ID DA card1 É IGUAL AO ID DA card2. SE NÃO, AMBAS TEREM DISPLAY HIDDEN, SE SIM, BORDA MUDA DE COR
+
+    // CHECAR SE A cardImage CONTEM A CLASSE show, SE NÃO:
     count += 1
     countText.textContent = count
   })
@@ -70,9 +108,8 @@ clickingCard()
 // RESETING THE GAME
 $('#replay').on('click', function(){
   $('tbody').remove()
+  count = 0
   countText.textContent = "0"
   createNewGame();
   clickingCard()
 })
-
-// CHANGING DISPLAY OF THE CLICKED CARD
