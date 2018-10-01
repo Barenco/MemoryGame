@@ -89,8 +89,9 @@ function clickingCard () {
       freezeScreen();
       setTimeout(function() {
         // SE AS ID FOREM DIFERENTES
-        hideCards(card1, card2);
-
+        if (card1[0].id != card2[0].id) {
+          hideCards(card1, card2);
+        }
         card1 = undefined;
         card2 = undefined;
       }, 1000);
