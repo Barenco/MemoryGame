@@ -50,6 +50,11 @@
 .fa-repeat {
   font-size: 1.2em;
   margin-right: 5%;
+  color: #f7f7f7;
+}
+
+#replay {
+  padding: 5px 30px;
 }
 
 #card0, #card1, #card2, #card3, #card4, #card5, #card6, #card7 {
