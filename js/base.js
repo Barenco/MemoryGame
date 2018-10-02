@@ -79,31 +79,29 @@ function freezeScreen() {
 function clickingCard () {
   $('.card').on('click', function (){
     const cardImage = $(this).children();
-    cardImage.removeClass('hidden');
-    cardImage.addClass('show');
+    if (cardImage.hasClass("hidden")) {
+      cardImage.removeClass('hidden');
+      cardImage.addClass('show');
 
-    if (count % 2 === 0) {
-      card1 = cardImage;
-    } else {
-      card2 = cardImage;
-      freezeScreen();
-      setTimeout(function() {
-        // SE AS ID FOREM DIFERENTES
-        if (card1[0].id != card2[0].id) {
-          hideCards(card1, card2);
-        }
-        card1 = undefined;
-        card2 = undefined;
-      }, 1000);
-
+      if (count % 2 === 0) {
+        card1 = cardImage;
+      } else {
+        card2 = cardImage;
+        freezeScreen();
+        setTimeout(function() {
+          // SE AS ID FOREM DIFERENTES
+          if (card1[0].id != card2[0].id) {
+            hideCards(card1, card2);
+          } else {
+            card1.css("border", "border: 4px solid red")
+          }
+          card1 = undefined;
+          card2 = undefined;
+        }, 1000);
+      }
+      count += 1
+      countText.textContent = count
     }
-
-
-    // CHECAR SE O ID DA card1 É IGUAL AO ID DA card2. SE NÃO, AMBAS TEREM DISPLAY HIDDEN, SE SIM, BORDA MUDA DE COR
-
-    // CHECAR SE A cardImage CONTEM A CLASSE show, SE NÃO:
-    count += 1
-    countText.textContent = count
   })
 }
 
