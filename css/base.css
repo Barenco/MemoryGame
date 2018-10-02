@@ -6,7 +6,7 @@ body {
 
 .title {
   margin: 30px auto;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 .center {
   margin: 0 auto 0;
@@ -99,3 +99,32 @@ body {
 #card7 {
   background-image: url("images/vaso.jpg");
 }
+
+ @media (min-width: 1900px) {
+   body {
+     font-size: 1.15em;
+   }
+   .title {
+     font-size: 4em;
+   }
+   .card {
+     width: 150px;
+     height: 150px;
+   }
+
+   #replay {
+     padding: 10px 50px;
+   }
+ }
+
+ @media (max-width: 700px) {
+   .board {
+      margin-top: 30px;
+   }
+
+   .card {
+     width: 60px;
+     height: 60px;
+     margin: 10px;
+   }
+ }
