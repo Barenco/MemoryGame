@@ -97,9 +97,9 @@ function clickingCard () {
             pares += 1;
             // IF THERE ARE 8 PAIRS IN THE BOARD, THE GAME IS FINISHED!
             if (pares == 8) {
-              if (count <= 26) {
+              if (count < 26) {
                 alert("Uau! Você tem uma memória muito boa, parabéns!")
-              } else if (count <= 40) {
+              } else if (count < 31) {
                 alert("Você foi bem, mas consegue fazer melhor.")
               } else {
                 alert("Acho que você está bem desatento. Por que não tenta de novo, dessa vez com mais foco?")
@@ -112,6 +112,21 @@ function clickingCard () {
       }
       count += 1
       countText.textContent = count
+      if (count >= 25) {
+        const star3 = $("#star3");
+        star3[0].classList.remove("fa-star");
+        star3[0].classList.add("fa-star-o");
+      }
+      if (count >= 31) {
+        const star2 = $("#star2");
+        star2[0].classList.remove("fa-star");
+        star2[0].classList.add("fa-star-o");
+      }
+      if (count >= 39) {
+        const star1 = $("#star1");
+        star1[0].classList.remove("fa-star");
+        star1[0].classList.add("fa-star-o");
+      }
 
     }
   })
