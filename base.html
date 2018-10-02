@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jogo da memória</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/base.css">
@@ -12,11 +14,20 @@
       <div class="container">
         <h1 class="text-center title">JOGO DA MEMÓRIA</h1>
         <div class="row justify-content-center score-bar">
-          <div class="col-3 text-center">
-            <p><span id="clicks">0</span> movimentos</p>
+          <div class="col-sm-3 text-center">
+            <div class="row">
+              <div class="col-sm 6">
+                <span id="star1"><i class="fa fa-star"></i></span>
+                <span id="star2"><i class="fa fa-star"></i></span>
+                <span id="star3"><i class="fa fa-star"></i></span>
+              </div>
+              <div class="col-sm-6">
+                <p><span id="clicks">0</span> movimentos</p>
+              </div>
+            </div>
           </div>
-          <div class="col-3 text-center">
-            <button id="replay">Jogar de novo</button>
+          <div class="col-sm-3 text-center">
+            <button id="replay"><i class="fa fa-repeat"></i></button>
           </div>
         </div>
         <table class="center board">
