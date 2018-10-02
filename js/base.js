@@ -3,6 +3,7 @@ let count = 0
 let countText = document.querySelector('#clicks')
 let card1;
 let card2;
+let pares = 0;
 
 // CREATING A LIST WITH 8 DIFFERENT NUMBES TWICE
 function makeNewList() {
@@ -89,11 +90,21 @@ function clickingCard () {
         card2 = cardImage;
         freezeScreen();
         setTimeout(function() {
-          // SE AS ID FOREM DIFERENTES
+          // IF THE ID'S ARE DIFFERENTS, HIDE THE CARDS
           if (card1[0].id != card2[0].id) {
             hideCards(card1, card2);
           } else {
-            card1.css("border", "border: 4px solid red")
+            pares += 1;
+            // IF THERE ARE 8 PAIRS IN THE BOARD, THE GAME IS FINISHED!
+            if (pares == 8) {
+              if (count <= 26) {
+                alert("Uau! Você tem uma memória muito boa, parabéns!")
+              } else if (count <= 40) {
+                alert("Você foi bem, mas consegue fazer melhor.")
+              } else {
+                alert("Acho que você está bem desatento. Por que não tenta de novo, dessa vez com mais foco?")
+              }
+            }
           }
           card1 = undefined;
           card2 = undefined;
@@ -101,17 +112,18 @@ function clickingCard () {
       }
       count += 1
       countText.textContent = count
+
     }
   })
 }
 
 createNewGame()
-
 clickingCard()
 
 // RESETING THE GAME
 $('#replay').on('click', function(){
   $('tbody').remove()
+  pares = 0
   count = 0
   countText.textContent = "0"
   createNewGame();
