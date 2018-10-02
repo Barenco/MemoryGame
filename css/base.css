@@ -42,6 +42,16 @@
   box-shadow: 0px 0px 45px 15px rgba(168,140,54,0.47);
 }
 
+.fa-star, .fa-star-o {
+  font-size: 1.7em;
+  margin-left: 5%;
+}
+
+.fa-repeat {
+  font-size: 1.2em;
+  margin-right: 5%;
+}
+
 #card0, #card1, #card2, #card3, #card4, #card5, #card6, #card7 {
   background-position: center;
   background-size: cover;
