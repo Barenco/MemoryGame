@@ -30,7 +30,7 @@
 .color-image {
   width: 100%;
   height: 100%;
-  border: 4px solid white;
+  border: 2px solid white;
 }
 
 .card {
@@ -42,34 +42,39 @@
   box-shadow: 0px 0px 45px 15px rgba(168,140,54,0.47);
 }
 
+#card0, #card1, #card2, #card3, #card4, #card5, #card6, #card7 {
+  background-position: center;
+  background-size: cover;
+}
+
 #card0 {
-  background-color: red;
+  background-image: url("images/bandeira.jpg");
 }
 
 #card1 {
-  background-color: blue;
+  background-image: url("images/concha.jpg");
 }
 
 #card2 {
-  background-color: yellow;
+  background-image: url("images/flor-de-lotus.jpg");
 }
 
 #card3 {
-  background-color: green;
+  background-image: url("images/guarda-sol.jpg");
 }
 
 #card4 {
-  background-color: orange;
+  background-image: url("images/nó.jpg");
 }
 
 #card5 {
-  background-color: grey;
+  background-image: url("images/peixes.jpg");
 }
 
 #card6 {
-  background-color: pink;
+  background-image: url("images/roda.jpg");
 }
 
 #card7 {
-  background-color: black;
+  background-image: url("images/vaso.jpg");
 }
