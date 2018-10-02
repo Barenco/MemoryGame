@@ -4,6 +4,7 @@ let countText = document.querySelector('#clicks')
 let card1;
 let card2;
 let matches = 0;
+let timer = 0
 
 // CREATING A LIST WITH 8 DIFFERENT NUMBES TWICE
 function makeNewList() {
@@ -66,6 +67,12 @@ function hideCards(card1, card2){
   card2.addClass('hidden');
 }
 
+// COUNTING THE TIME
+let countingTime = setInterval(function () {
+  timer += 1;
+  document.querySelector("#timer").textContent = timer;
+}, 1000)
+
 // FREEZING THE SCREEN SO THAT NOTHING IS CLICKABLE
 function freezeScreen() {
   const blocker = document.createElement('div');
@@ -79,7 +86,6 @@ function freezeScreen() {
 
 function clickingCard () {
   $('.card').on('click', function (){
-    $('#myModal').modal('toggle')
     const cardImage = $(this).children();
     if (cardImage.hasClass("hidden")) {
       cardImage.removeClass('hidden');
@@ -98,6 +104,7 @@ function clickingCard () {
             matches += 1;
             // IF THERE ARE 8 PAIRS IN THE BOARD, THE GAME IS FINISHED!
             if (matches == 8) {
+              clearInterval(countingTime);
               if (count < 26) {
                 alert("Uau! Você tem uma memória muito boa, parabéns!")
               } else if (count < 31) {
@@ -139,6 +146,7 @@ clickingCard()
 // RESETING THE GAME
 $('#replay').on('click', function(){
   $('tbody').remove()
+  timer = 0
   matches = 0
   count = 0
   countText.textContent = "0"
