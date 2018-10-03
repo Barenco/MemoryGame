@@ -106,7 +106,6 @@ function clickingCard () {
             if (matches == 8) {
               clearInterval(countingTime);
               $('#finalPopUp').modal('show')
-
             }
           }
           card1 = undefined;
@@ -145,6 +144,12 @@ $('#replay').on('click', function () {
   matches = 0
   count = 0
   countText.textContent = "0"
+  for (i = 1; i <= 3; i++) {
+    const star = $("#star" + i);
+    star[0].classList.remove("fa-star-o");
+    star[0].classList.add("fa-star");
+    console.log(star)
+  }
   createNewGame();
   clickingCard()
 })
@@ -155,6 +160,12 @@ $('#playAgain').on('click', function () {
   matches = 0
   count = 0
   countText.textContent = "0"
+  for (i = 1; i <= 3; i++) {
+    const star = $("#star" + i);
+    star[0].classList.remove("fa-star-o");
+    star[0].classList.add("fa-star");
+    console.log(star)
+  }
   let countingTime = setInterval(function () {
     document.querySelector("#timer").textContent = timer;
     timer += 1;
