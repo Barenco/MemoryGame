@@ -105,6 +105,17 @@ function clickingCard () {
             // IF THERE ARE 8 PAIRS IN THE BOARD, THE GAME IS FINISHED!
             if (matches == 8) {
               clearInterval(countingTime);
+              let starRate;
+              if (count < 25) {
+                starRate = "3 estrelas"
+              } else if (count < 31) {
+                starRate = "2 estrelas"
+              } else if (count < 39) {
+                starRate = "1 estrela"
+              } else {
+                starRate = "0 estrela"
+              }
+              document.querySelector('#winningText').innerHTML = "Parabéns. Você terminou o jogo com " + count + " movimentos, " + starRate + " e em " + timer + " segundos."
               $('#finalPopUp').modal('show')
             }
           }
@@ -114,6 +125,7 @@ function clickingCard () {
       }
       count += 1
       countText.textContent = count
+
       if (count >= 25) {
         const star3 = $("#star3");
         star3[0].classList.remove("fa-star");
