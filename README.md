@@ -1,12 +1,20 @@
-# Jogo da memória
+# Memory Game
 
-## Como jogar
-O jogo começa com 16 cartas viradas pra cima. Ao clicar numa carta ela vira para cima. Clicando em outra ela pode:
-- ser igual e o par fica virado pra cima;
-- ser diferente e as duas cartas voltam a virar para baixo.
+## Introduction
 
-Ganha-se o jogo quando os 8 pares são dispostos na tela.
+This game was developed as a final project for the Nanodegree Front-End Fundamentals, from Udacity. 
+
+## Running it
+
+Just download the files and run base.html on your browser
+
+## Rules
+The game starts with 16 cards faced down. Click in one so it faces up and show it content. Clicking another card can:
+- match the cards and they stay face up;
+- be different and both stay face down.
+
+The game is won when all 8 pairs are displayed in the screen.
 
 ## Copyright
 
-Este código pode ser usado livremente.
+This code is free of copyrights.
